@@ -1,0 +1,14 @@
+<VirtualHost *:80>
+	ServerName web-context.local.net
+	ServerAdmin admin@local.net
+	DocumentRoot "/home/ubuntu/public_html/web-context/"
+	<Directory "/home/ubuntu/public_html/web-context/">
+		Options Indexes FollowSymLinks
+		Order Deny,Allow
+		Deny from All
+		Allow from localhost
+	</Directory>
+	
+	LogFormat "%v %l %u %t \"%r\" %>s %b" comonvhost
+	CustomLog "/var/log/apache2/v-hosts/webcontext_local_net_access.log" comonvhost 
+</VirtualHost>

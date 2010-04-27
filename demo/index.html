@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Web-Context</title>
+		<link rel="stylesheet" href="styles/web-context.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="styles/jquery.lightbox.css" type="text/css" media="screen" />
+		<script src="scripts/jquery-1.4.2.min.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+		<script src="scripts/jquery.lightbox-0.5.pack.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+		<script src="scripts/main.js" type="text/javascript" language="javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="page">
+			<div id="header">
+				<div id="webcontext-header">
+					<h1>Web<br />Context</h1>
+					<div class="rightside">
+						<p>the next web design level</p>
+						<form id="formsearch" class="search" method="post" action="search.php">
+							<label for="search">search
+							<input type="text" 
+											name="search" id="search" 
+											value="input your search" 
+											size="15" maxsize="30"/></label>
+						</form>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+					
+			</div>
+			<div id="content">
+				<div id="sidebar">
+					<div class="sub">
+						<ul>
+							<li><a href="index.html" title="back to welcome page" accesskey="h"><u>h</u>ome</a></li>
+							<li><a href="#" title="test the demo" accesskey="d"><u>d</u>emo</a></li>
+							<li><a href="#" title="parse the blog" accesskey="b"><u>b</u>log</a></li>
+							<li><a href="#" title="get in contact with the author" accesskey="c"><u>c</u>ontact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="inner-content">
+					<div id="upperbar">
+						<ul>
+							<li><a href="demo01.html" title="show the demo 01">demo-01</a></li>
+						</ul>
+					</div>
+					<div class="posts">
+						<div class="clear"></div>
+							<?php include_once("templates/logo.tpl"); ?>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<div id="footer">
+				<ul><li>Copyright 2010</li>
+				<li><a href="mailto:frederic.delorme@web-context.com" title="contact author">frederic.delorme@web-context.com</a></li>
+				<li><a href="http://www.web-context.com/" title="visit home page">http://www.web-context.com/</a></li></ul>
+				<p>Only viewable with <a href="" title="Visit the official Mozilla Web site">Mozilla Firefox</a> and And <a href="http://en.wikipedia.org/wiki/List_of_web_browsers#WebKit-based_browsers	" title="see a wikipedia list">Webkit Based internet browser</a>.</p>
+			</div>
+		</div>
+	</body>
+</html>

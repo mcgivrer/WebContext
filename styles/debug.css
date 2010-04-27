@@ -1,0 +1,46 @@
+#debug {
+	float:left;
+	width:100%;
+	margin-bottom:10px;
+	border:1px outset #f00;
+	background-color:#FEE;
+}
+#debug .view{
+	float:left;
+	width:100%;
+	overflow: auto;
+	max-height:250px;
+	min-height:100px;
+	text-align:left;
+	color:#f00;
+}
+#debug .toolbar{
+	float:left;
+	display:inline;
+	width:100%;
+	background-color:#f00;
+	color:#fff;
+}
+#debug .toolbar .title{
+	float:left;
+	padding:2px;
+}
+#debug .toolbar .action{
+	float:right;
+	color:#000;
+	padding:2px;
+}
+#debug.view ul{
+	list-style:none;
+	font-size:8pt;
+	font-family:sans-serif;
+	margin:0px;
+	padding:10px;
+	background-color:#fee;
+	color:#f00;
+}
+#debug .toolbar .reverse{
+	background-color:#f00;
+	color:#fee;
+}
+

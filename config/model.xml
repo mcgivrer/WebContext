@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<!-- Tag: to search easily into features -->
+	<entity name="tag" key="name" table="tag" description="Tag entity to mark feature">
+
+		<field name="name" type="TEXT" size="30" description="name og the tag" generatelink="true" />
+		<field name="description" type="TEXT" size="255" description="a small description according to this tag"/>
+
+		<relation type="many-to-many" name="features" entity="feature" persistIn="tags_features" description="all features marked with this tag"/>
+
+	</entity>
+	<!-- Category: to classified features -->
+	<entity name="category" key="name" table="category" description="category entity to groups features by theme">
+
+		<field name="name" type="TEXT" size="30" description="name of the category"/>
+		<field name="url" type="TEXT" size="30" generatelink="true" description="simplified name of the category to use in url"/>
+		<field name="description" type="TEXT" size="255" description="description for this category"/>
+		<field name="sortorder" type="NUMBER" description="sort order of appearence in list for this category"/>
+
+		<relation type="one-to-many" name="features" entity="feature" description="all posts linked to this category"/>
+
+	</entity>
+	<!-- User: user to login to the site and publish and comments things. First will be the admin. -->
+	<entity name="user" key="username" table="user" description="User entity defined in the system">
+
+		<field name="username" type="TEXT" size="20" generatelink="true" description="user name of te user"/>
+		<field name="password" type="TEXT" size="20" description="internal password ued for login"/>
+		<field name="firstname" type="TEXT" size="50" description="Firstname of the user"/>
+		<field name="lastname" type="TEXT" size="50" description="Lastname of the user"/>
+		<field name="email" type="TEXT" size="100" description="email of the user"/>
+		<field name="role" type="TEXTENUM" size="20" enum="VISITOR,NEW,READER,WRITER,MODERATOR,ADMIN" default="VISITOR" description="role of the user on this website"/>
+		
+		<relation type="one-to-many" name="features" entity="feature" description=" all features linked to this user (author, modifier)"/>
+		
+	</entity>
+	
+	<!-- Feature:  main "article" entity displayed and managed by this site -->
+	<entity name="feature" key="id" table="feature" description="all managed displayed text article in this website.">
+
+		<field name="id" type="NUMBER" description="technical id"/>
+		<field name="title" type="TEXT" size="255" description="title for this feature"/>
+		<field name="url" type="TEXT" size="255" generatelink="true" description="simplified title for url construction"/>
+		<field name="header" type="TEXT" size="400" description="header of article, introducing content"/>
+		<field name="content" type="TEXT" size="4000" description="content of the article"/>
+		<field name="state" type="TEXTENUM" size="10" enum="CREATE,VALIDATE,PUBLISHED" default="CREATE" description="state of this feature" />
+		<field name="createdAt" type="DATETIME" default="NOW" description="Date of creation"/>
+		<field name="updatedAt" type="DATETIME" default="NOW" description="Date of updation"/>		
+		
+		<relation type="many-to-many" name="tags" entity="tag" persisttype="list" persistIn="tags_features" description="tags marking this article"/>
+		<relation type="many-to-one" name="author" entity="user" description="Author of this article" />
+		<relation type="many-to-one" name="category" entity="category" description="category of this article"/>
+
+	</entity>
+	
+</entities>
